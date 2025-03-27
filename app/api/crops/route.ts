@@ -1,11 +1,17 @@
 import { type NextRequest, NextResponse } from "next/server"
 import clientPromise from "@/lib/db"
 import { type Crop, CropStatus } from "@/lib/models/crop"
+import { logger } from "@/lib/logger"
 
 // GET all crops
 export async function GET(req: NextRequest) {
+  const startTime = Date.now()
+  const url = new URL(req.url)
+
+  logger.apiRequest("GET", url.toString(), req.headers)
+
   try {
-    const { searchParams } = new URL(req.url)
+    const { searchParams } = url
     const farmer = searchParams.get("farmer")
     const name = searchParams.get("name")
     const location = searchParams.get("location")
@@ -13,6 +19,16 @@ export async function GET(req: NextRequest) {
     const minPrice = searchParams.get("minPrice")
     const maxPrice = searchParams.get("maxPrice")
     const status = searchParams.get("status")
+
+    logger.debug("Crops API - Query parameters", {
+      farmer,
+      name,
+      location,
+      quality,
+      minPrice,
+      maxPrice,
+      status,
+    })
 
     // Build query
     const query: any = {}
@@ -29,6 +45,8 @@ export async function GET(req: NextRequest) {
       if (maxPrice) query.price.$lte = Number.parseInt(maxPrice)
     }
 
+    logger.debug("Crops API - MongoDB query", { query })
+
     // Connect to MongoDB
     const client = await clientPromise
     const db = client.db()
@@ -36,21 +54,54 @@ export async function GET(req: NextRequest) {
     // Get crops
     const crops = await db.collection("crops").find(query).toArray()
 
-    return NextResponse.json(crops)
+    logger.debug(`Crops API - Found ${crops.length} crops`)
+
+    const response = NextResponse.json(crops)
+
+    const duration = Date.now() - startTime
+    logger.apiResponse("GET", url.toString(), response.status, {
+      count: crops.length,
+      duration: `${duration}ms`,
+    })
+
+    return response
   } catch (error) {
-    console.error("Error fetching crops:", error)
-    return NextResponse.json({ error: "Failed to fetch crops" }, { status: 500 })
+    const errorObj = error instanceof Error ? error : new Error("Unknown error")
+    logger.error("Error fetching crops:", errorObj, { url: req.url })
+
+    const response = NextResponse.json({ error: "Failed to fetch crops" }, { status: 500 })
+
+    logger.apiResponse("GET", url.toString(), response.status, {
+      error: errorObj.message,
+    })
+
+    return response
   }
 }
 
 // POST new crop
 export async function POST(req: NextRequest) {
+  const startTime = Date.now()
+  const url = new URL(req.url)
+
   try {
-    const cropData = await req.json()
+    const body = await req.json()
+    logger.apiRequest("POST", url.toString(), req.headers, body)
 
     // Validate input
-    if (!cropData.name || !cropData.farmer || !cropData.quantity || !cropData.price) {
-      return NextResponse.json({ error: "Missing required fields" }, { status: 400 })
+    if (!body.name || !body.farmer || !body.quantity || !body.price) {
+      logger.warn("Crops API - Missing required fields", {
+        provided: Object.keys(body),
+        required: ["name", "farmer", "quantity", "price"],
+      })
+
+      const response = NextResponse.json({ error: "Missing required fields" }, { status: 400 })
+
+      logger.apiResponse("POST", url.toString(), response.status, {
+        error: "Missing required fields",
+      })
+
+      return response
     }
 
     // Connect to MongoDB
@@ -59,26 +110,51 @@ export async function POST(req: NextRequest) {
 
     // Create new crop
     const newCrop: Crop = {
-      ...cropData,
+      ...body,
       status: CropStatus.AVAILABLE,
       createdAt: new Date(),
       updatedAt: new Date(),
     }
 
+    logger.debug("Crops API - Creating new crop", {
+      name: newCrop.name,
+      farmer: newCrop.farmer,
+    })
+
     // Insert crop into database
     const result = await db.collection("crops").insertOne(newCrop)
 
+    logger.debug("Crops API - Crop created successfully", {
+      cropId: result.insertedId.toString(),
+    })
+
     // Return success response
-    return NextResponse.json(
+    const response = NextResponse.json(
       {
         message: "Crop added successfully",
         cropId: result.insertedId,
       },
       { status: 201 },
     )
+
+    const duration = Date.now() - startTime
+    logger.apiResponse("POST", url.toString(), response.status, {
+      cropId: result.insertedId.toString(),
+      duration: `${duration}ms`,
+    })
+
+    return response
   } catch (error) {
-    console.error("Error adding crop:", error)
-    return NextResponse.json({ error: "Failed to add crop" }, { status: 500 })
+    const errorObj = error instanceof Error ? error : new Error("Unknown error")
+    logger.error("Error adding crop:", errorObj, { url: req.url })
+
+    const response = NextResponse.json({ error: "Failed to add crop" }, { status: 500 })
+
+    logger.apiResponse("POST", url.toString(), response.status, {
+      error: errorObj.message,
+    })
+
+    return response
   }
 }
 

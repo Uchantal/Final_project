@@ -19,8 +19,8 @@ export default function AboutPage() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                Our mission is to embrace technology in Rwanda's Agriculture sector through this Connecting platform to
-                help farmers meet with their relevant stakeholders, encourage them to adapt to modern Agriculture to
+                Our mission is to embrace technology in Rwanda's Agriculture sector by creating a connective platform to
+                help farmers meet with their relevant stakeholders and encourage them to adapt to modern Agriculture to
                 ensure food security in the Country and abroad.
               </p>
             </CardContent>
@@ -126,6 +126,57 @@ export default function AboutPage() {
                   <span>Build reputation through ratings and reviews</span>
                 </li>
               </ul>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="flex flex-col space-y-2">
+          <h2 className="text-2xl font-bold tracking-tight">Development Approach</h2>
+          <p className="text-muted-foreground">
+            We use the Agile development model to ensure our platform meets the real needs of the agricultural sector in
+            Rwanda.
+          </p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <Card>
+            <CardHeader>
+              <CardTitle>1. Requirements</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground">
+                Collect feedback from farmers, buyers, and transporters and prioritize key functionalities.
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>2. Development</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground">
+                Develop the system in small, functional phases with each sprint delivering a working feature.
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>3. Testing</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground">
+                Conduct continuous testing of each feature before moving forward to ensure reliability.
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>4. Refinement</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground">
+                Gather feedback from users after each release and make necessary improvements.
+              </p>
             </CardContent>
           </Card>
         </div>

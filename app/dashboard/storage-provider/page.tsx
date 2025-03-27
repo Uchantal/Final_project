@@ -138,7 +138,7 @@ export default function StorageProviderDashboard() {
             <div className="flex justify-between">
               <h2 className="text-xl font-semibold">My Storage Facilities</h2>
               <Button className="bg-green-600 hover:bg-green-700">
-                <Link href="/storage/add" className="flex items-center">
+                <Link href="/storage/register" className="flex items-center">
                   <Plus className="mr-2 h-4 w-4" />
                   Add New Facility
                 </Link>
@@ -150,7 +150,7 @@ export default function StorageProviderDashboard() {
                 <div className="col-span-full text-center py-8 text-muted-foreground">
                   <p>You haven&apos;t listed any storage facilities yet.</p>
                   <Button className="mt-4 bg-green-600 hover:bg-green-700">
-                    <Link href="/storage/add" className="flex items-center">
+                    <Link href="/storage/register" className="flex items-center">
                       <Plus className="mr-2 h-4 w-4" />
                       Add Your First Facility
                     </Link>

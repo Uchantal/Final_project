@@ -321,7 +321,7 @@ export default function FarmerBuyerDashboard() {
               <div className="flex justify-between">
                 <h2 className="text-xl font-semibold">My Storage Bookings</h2>
                 <Button className="bg-green-600 hover:bg-green-700">
-                  <Link href="/storage/find">Find Storage</Link>
+                  <Link href="/storage">Find Storage</Link>
                 </Button>
               </div>
               <div className="grid gap-4 md:grid-cols-2">
@@ -367,7 +367,7 @@ export default function FarmerBuyerDashboard() {
               <div className="flex justify-between">
                 <h2 className="text-xl font-semibold">My Transport Bookings</h2>
                 <Button className="bg-green-600 hover:bg-green-700">
-                  <Link href="/transport/find">Find Transport</Link>
+                  <Link href="/transport">Find Transport</Link>
                 </Button>
               </div>
               <div className="grid gap-4 md:grid-cols-2">

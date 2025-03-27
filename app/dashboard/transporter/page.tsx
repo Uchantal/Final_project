@@ -138,7 +138,7 @@ export default function TransporterDashboard() {
             <div className="flex justify-between">
               <h2 className="text-xl font-semibold">My Transport Vehicles</h2>
               <Button className="bg-green-600 hover:bg-green-700">
-                <Link href="/transport/add" className="flex items-center">
+                <Link href="/transport/register" className="flex items-center">
                   <Plus className="mr-2 h-4 w-4" />
                   Add New Vehicle
                 </Link>
@@ -150,7 +150,7 @@ export default function TransporterDashboard() {
                 <div className="col-span-full text-center py-8 text-muted-foreground">
                   <p>You haven&apos;t listed any transport vehicles yet.</p>
                   <Button className="mt-4 bg-green-600 hover:bg-green-700">
-                    <Link href="/transport/add" className="flex items-center">
+                    <Link href="/transport/register" className="flex items-center">
                       <Plus className="mr-2 h-4 w-4" />
                       Add Your First Vehicle
                     </Link>
