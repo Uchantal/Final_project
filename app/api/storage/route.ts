@@ -57,7 +57,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Insert storage into database
-    const result = await db.collection("storage").insertOne(newStorage)
+    const result = await db.collection("storage").insertOne(newStorage as any)
 
     // Return success response
     return NextResponse.json(
