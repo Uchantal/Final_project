@@ -65,7 +65,7 @@ export default function AboutPage() {
           <Card>
             <CardHeader>
               <CardTitle>For Buyers</CardTitle>
-              <CardDescription>Direct access to quality produce</CardDescription>
+              <CardDescription>Direct access to quality products</CardDescription>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2">

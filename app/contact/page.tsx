@@ -178,7 +178,7 @@ export default function ContactPage() {
               <div className="rounded-lg border p-4">
                 <h3 className="font-medium mb-2">Office Address</h3>
                 <p className="text-muted-foreground">
-                  KG 123 Street, Kigali Heights
+                  KG 501st Gasabo-Gisozi
                   <br />
                   Kigali, Rwanda
                 </p>
@@ -189,7 +189,7 @@ export default function ContactPage() {
                 <div className="space-y-2">
                   <div className="flex items-center">
                     <Phone className="mr-2 h-4 w-4 text-muted-foreground" />
-                    <span>+250 788 123 456</span>
+                    <span>+250 788855321</span>
                   </div>
                   <div className="flex items-center">
                     <Mail className="mr-2 h-4 w-4 text-muted-foreground" />
@@ -199,7 +199,7 @@ export default function ContactPage() {
               </div>
 
               <div className="rounded-lg border p-4">
-                <h3 className="font-medium mb-2">Business Hours</h3>
+                <h3 className="font-medium mb-2">Office Hours</h3>
                 <div className="space-y-1 text-muted-foreground">
                   <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
                   <p>Saturday: 9:00 AM - 1:00 PM</p>
