@@ -19,23 +19,9 @@ export default function AboutPage() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                Our mission is to embrace technology in Rwanda's Agriculture sector by creating a connective platform to
-                help farmers meet with their relevant stakeholders and encourage them to adapt to modern Agriculture to
+                Our mission is to embrace technology in Rwanda's Agriculture sector through this connective platform to
+                help farmers meet with their relevant stakeholders, reduces harvest losses and encourage them to adapt to the modern Agriculture to
                 ensure food security in the Country and abroad.
-              </p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>The Problem</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                According to the Rwanda Agriculture and Animal Resources Development Board (RAB), post-harvest losses in
-                some agricultural value chains reach up to 30%. These losses are primarily due to inadequate storage
-                facilities leading crops to spoilage before getting to the market, limited transportation options, and
-                insufficient market access, leading to reduced income and discouraging farmers from adopting modern
-                agricultural practices.
               </p>
             </CardContent>
           </Card>
@@ -130,67 +116,18 @@ export default function AboutPage() {
           </Card>
         </div>
 
-        <div className="flex flex-col space-y-2">
-          <h2 className="text-2xl font-bold tracking-tight">Development Approach</h2>
-          <p className="text-muted-foreground">
-            We use the Agile development model to ensure our platform meets the real needs of the agricultural sector in
-            Rwanda.
-          </p>
-        </div>
-
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          <Card>
-            <CardHeader>
-              <CardTitle>1. Requirements</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                Collect feedback from farmers, buyers, and transporters and prioritize key functionalities.
-              </p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>2. Development</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                Develop the system in small, functional phases with each sprint delivering a working feature.
-              </p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>3. Testing</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                Conduct continuous testing of each feature before moving forward to ensure reliability.
-              </p>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>4. Refinement</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                Gather feedback from users after each release and make necessary improvements.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
+        
 
         <div className="flex flex-col space-y-2">
           <h2 className="text-2xl font-bold tracking-tight">Expected Impact</h2>
           <p className="text-muted-foreground">
-            Once fully deployed, we anticipate that the Post-Harvest Manager platform will significantly improve the
-            efficiency of post-harvest processes in Rwanda.
+            we anticipate that the Post-Harvest Manager platform will significantly improve the
+            efficiency of post-harvest processes in Rwanda by accessing Markets earlier.
           </p>
           <ul className="mt-4 space-y-2">
             <li className="flex items-start">
               <CheckCircle2 className="mr-2 h-5 w-5 text-green-600" />
-              <span>Reduced post-harvest losses as farmers gain access to storage and transport options on time</span>
+              <span>Reduced post-harvest losses as farmers gain access to storage and <br />transport on time hence Market access to the market</span>
             </li>
             <li className="flex items-start">
               <CheckCircle2 className="mr-2 h-5 w-5 text-green-600" />
@@ -202,7 +139,7 @@ export default function AboutPage() {
             </li>
             <li className="flex items-start">
               <CheckCircle2 className="mr-2 h-5 w-5 text-green-600" />
-              <span>Growth in the agricultural sector, improved food security, and boosted overall productivity</span>
+              <span>Growth in the agricultural sector and improved food security</span>
             </li>
           </ul>
         </div>

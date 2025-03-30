@@ -81,7 +81,7 @@ export default function Home() {
                 <CardTitle className="mt-4">Storage Providers</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription>List your storage facilities and help farmers preserve their crops.</CardDescription>
+                <CardDescription>List your storage facilities and help farmers preserve their harvests.</CardDescription>
               </CardContent>
             </Card>
             <Card className="flex flex-col items-center text-center">
@@ -93,7 +93,7 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <CardDescription>
-                  Offer your transport services to move crops from farms to storage or markets.
+                  Offer your transport services to move harvests from farms to storage or markets.
                 </CardDescription>
               </CardContent>
             </Card>
