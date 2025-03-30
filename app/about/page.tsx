@@ -22,6 +22,9 @@ export default function AboutPage() {
                 Our mission is to embrace technology in Rwanda's Agriculture sector through this connective platform to
                 help farmers meet with their relevant stakeholders, reduces harvest losses and encourage them to adapt to the modern Agriculture to
                 ensure food security in the Country and abroad.
+                <br /> <br /> The Post-Harvest Manager platform connects farmers with buyers, transport providers, and storage facilities,
+            ensuring efficient post-harvest management and improved market access.
+          </p>
               </p> <br />
 
               <div className="flex flex-col space-y-2">
