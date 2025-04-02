@@ -2,11 +2,13 @@
 
 A comprehensive platform connecting Rwandan farmers with storage facilities, transport providers, and buyers to reduce post-harvest losses and improve agricultural efficiency.
 
-![Post-Harvest Manager](https://github.com/yourusername/post-harvest-manager/raw/main/public/screenshot.png)
+Post-Harvest Manager:  final-project-omega-inky.vercel.app
+
+
 
 ## 🌱 Overview
 
-Post-Harvest Manager is an agritech solution designed to address the critical issue of post-harvest losses in Rwanda, which can reach up to 30% in some agricultural value chains. The platform connects all stakeholders in the agricultural value chain:
+Post-Harvest Manager is an agriculture technology  solution designed to address the critical issue of post-harvest losses in Rwanda, which can reach up to 30% in some agricultural value chains. The platform connects all stakeholders in the agricultural value chain:
 
 - **Farmers** can list their crops, find storage facilities, and arrange transportation
 - **Storage Providers** can register their facilities and receive bookings
@@ -47,5 +49,4 @@ Follow these steps to get the project running on your local machine:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/post-harvest-manager.git
-cd post-harvest-manager
+git clone: https://github.com/Uchantal/Final_project.git
