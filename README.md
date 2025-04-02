@@ -2,8 +2,7 @@
 
 A comprehensive platform connecting Rwandan farmers with storage facilities, transport providers, and buyers to reduce post-harvest losses and improve agricultural efficiency.
 
-Post-Harvest Manager:  final-project-omega-inky.vercel.app
-
+Post-Harvest Manager:  (final-project-omega-inky.vercel.app)
 
 
 ## 🌱 Overview
